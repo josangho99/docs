@@ -1,2 +1,2 @@
-#RAID
-###RAID란?
+# RAID
+## RAID란?
