@@ -1,7 +1,7 @@
 # RAID
 ## RAID란?
-Redundant Array of Independent Disk or Redundant Array of Inexpensive Disk
-여러 개의 디스크를 묶어 하나의 디스크처럼 사용하는 기술
+- Redundant Array of Independent Disk or Redundant Array of Inexpensive Disk
+- 여러 개의 디스크를 묶어 하나의 디스크처럼 사용하는 기술
 
 ### 주요 용어
 1. 스트라이핑(Striping)
@@ -26,9 +26,17 @@ Redundant Array of Independent Disk or Redundant Array of Inexpensive Disk
 - 쓰기의 경우 컨트롤러를 사용하는지, 소프트웨어(ex.IntelVMD)를 사용하느냐에 따라 다르기에 정확한 수치화 불가
 - 리스크는 1/N, 1개만 살아있어도 rebuild를 통해 사용 가능
 
+### RAID4
+- block 단위로 Striping을 하고, 데이터 복구를 위한 1개의 패리티 코드를 1개의 디스크에 저장
+- 최소 3개의 디스크
+- 용량 및 성능이 N-1배 증가
+- 1개의 디스크 에러시 복구 가능
+- 패리티 코드를 하나의 디스크에 저장하기에 해당 디스크 과부화로 인한 수명이 줄어듦
+- 위 단점 해결을 위해 RAID5 방식으로 변경
+
 ### RAID5
 - 가장 많이 사용됨
-- block 단위로 Striping을 하고, Error Correction을 위해 1개의 패리티를 모든 디스크에 분할 저장함
+- block 단위로 Striping을 하고, 데이터 복구를 위한 1개의 패리티 코드를 모든 디스크에 분할 저장함
 - 패리티는 단순 XOR 연산으로 생성
 - 최소 3개의 디스크
 - 용량 및 성능이 N-1배 증가
@@ -37,8 +45,18 @@ Redundant Array of Independent Disk or Redundant Array of Inexpensive Disk
 - HotSpare 디스크를 추가 지정하여 리스크 관리 가능(기존 디스크가 고장나지 않는 이상 대기 상태라 비용이 증가)
 
 ### RAID6
+- block 단위로 Striping을 하고, 데이터 복구를 위한 2개의 패리티 코드를 모든 디스크에 분할 저장함
+- 1개의 패리티는 단순 XOR연산으로, 1개는 보다 복잡한 알고리즘(ex. Reed Solomon code)으로 생성
+- 최소 4개의 디스크
+- 용량 및 성능은 N-2배 증가
+- 2개의 디스크 에러시 복구 가능[3개 이상은 불가]
+- RAID5에서 성능, 용량을 줄이고 안정성을 높인 RAID Level
 
 ## 중첩 RAID(Nested RAID)
-### RAID10(1+0)
-
 ### RAID01(0+1)
+- RAID 0으로 묶인 디스크들을 1로 묶음
+- 극단적으로 0으로 묶인 1개의 그룹만 정상이어도 사용 가능
+
+### RAID10(1+0)
+- RAID 1로 묶인 디스크들을 0으로 묶음
+- 극단적으로 1로 묶인 각 그룹별 디스크가 1개씩만 정상이어도 사용 가능
