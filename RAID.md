@@ -60,3 +60,12 @@
 ### RAID10(1+0)
 - RAID 1로 묶인 디스크들을 0으로 묶음
 - 극단적으로 1로 묶인 각 그룹별 디스크가 1개씩만 정상이어도 사용 가능
+
+### 참고링크
+- :link: [RAID 정리 1. RAID 기본 설명 및 RAID Level][RAID-devocean-Link]
+- :link: [RAID 란?, RAID 구성방식][RAID-velog-Link]
+- :link: [Reed-Solomon 이란?][Reed-Solomon-Link]
+
+[RAID-devocean-Link]: https://devocean.sk.com/blog/techBoardDetail.do?ID=163608
+[RAID-velog-Link]: https://velog.io/@zxcvbnm5288/RAID-%EB%9E%80-RAID-%EA%B5%AC%EC%84%B1%EB%B0%A9%EC%8B%9DRAID-0-1-4-5-6-10-01
+[Reed-Solomon-Link]: https://velog.io/@croc100/Reed-Solomon-%EC%9D%B4%EB%9E%80
