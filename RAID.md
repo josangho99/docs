@@ -61,6 +61,20 @@
 - RAID 1로 묶인 디스크들을 0으로 묶음
 - 극단적으로 1로 묶인 각 그룹별 디스크가 1개씩만 정상이어도 사용 가능
 
+## Write Policy
+### Write Back
+- 캐시 메모리에만 저장 후 저장 성공 콜백을 보내주고 디스크에 데이터를 기록하는 방식
+- 기본 값으로 사용되며 보통 OS용 SSD에 사용
+
+### Always Write Back
+- BBU 유뮤와 관계없이 항상 캐시 메모리에만 저장 후 저장 성공 콜백을 보내주고 디스크에 데이터를 기록하는 방식
+- 저장 콜백을 빠르게 주기에 다음 작업 수행이 원활하며 주로 속도가 느린 HDD에 사용
+
+### Write Through
+- 디스크에 데이터를 저장 후 저장 성공 콜백을 보내주는 방식
+- 데이터 무결성을 완벽히 유지할 수 있다는 장점이 존재
+- 단, 디스크에 입력 완료 후 다음 작업 수행이 가능하기에 속도가 느린 SATA용 HDD에는 권장하지 않음(SAS의 경우 상황에 따르나, 대부분 Write Back 혹은 Always Write back에 사용)
+
 ### 참고링크
 - :link: [RAID 정리 1. RAID 기본 설명 및 RAID Level][RAID-devocean-Link]
 - :link: [RAID 란?, RAID 구성방식][RAID-velog-Link]
