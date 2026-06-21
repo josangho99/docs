@@ -76,8 +76,8 @@
 - 단, 디스크에 입력 완료 후 다음 작업 수행이 가능하기에 속도가 느린 SATA용 HDD에는 권장하지 않음(SAS의 경우 상황에 따르나, 대부분 Write Back 혹은 Always Write back에 사용)
 
 ### 참고링크
-:link: [RAID 정리 1. RAID 기본 설명 및 RAID Level][RAID-devocean-Link]
-:link: [RAID 란?, RAID 구성방식][RAID-velog-Link]
+:link: [RAID 정리 1. RAID 기본 설명 및 RAID Level][RAID-devocean-Link] <br>
+:link: [RAID 란?, RAID 구성방식][RAID-velog-Link] <br>
 :link: [Reed-Solomon 이란?][Reed-Solomon-Link]
 
 [RAID-devocean-Link]: https://devocean.sk.com/blog/techBoardDetail.do?ID=163608
